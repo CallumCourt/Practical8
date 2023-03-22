@@ -1,0 +1,40 @@
+  @model Student
+    
+
+<div class="card rounded shadow p-4">
+  <h3>Delete Student</h3> 
+  <h4 class="my-3 text-danger">Are you sure?</h4>
+
+  <!-- display the student using a <dl> as per Details.cshtml -->     
+  <dl class="row">  
+    <dt class="col-4 pb-1">Name</dt>
+    <dd class="col-8 pb-1">@Model.Name</dd>
+
+    <dt class="col-4 pb-1">Course</dt>
+    <dd class="col-8 pb-1">@Model.Course</dd>
+    
+    <dt class="col-4 pb-1">Age</dt>
+    <dd class="col-8 pb-1">@Model.Age</dd>
+    
+    <dt class="col-4 pb-1">Email</dt>
+    <dd class="col-8 pb-1">@Model.Email</dd>
+
+    <dt class="col-4 pb-1">Classification</dt>
+    <dd class="col-8 pb-1">@Model.Classification</dd>
+  </dl>
+  <div class="mt-4">
+    <!-- create a form to submit post request to DeleteConfirm action     --> 
+    <!-- student Id should be a hidden input field named 'Id' in the form -->      
+    <!-- add type submit input button and cancel link to Index action     -->
+    <form asp-action="DeleteConfirm">
+          <input type="hidden" asp-for="Id" class="form-control"/>
+
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+        <!-- exercise - modify navigation to display student on cancel -->
+        <a class="btn btn-secondary" asp-action="Details" asp-route-id="@Model.Id" >Cancel</a>
+
+    </form>
+  </div>
+</div>
+
+</div>

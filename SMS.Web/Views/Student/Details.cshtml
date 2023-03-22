@@ -1,0 +1,54 @@
+@model Student
+
+<div class="card rounded shadow p-4">
+    <!-- Display student details -->
+    <div class="row">
+        <!-- Details and Navigation -->
+        <div class="col-8 d-flex flex-column justify-content-between">
+            <!-- Student details -->
+            <div>
+                <h2 class="mb-4 text-primary">Student Details</h2>
+                <dl class="row">  
+                    <dt class="col-4 pb-1">Name</dt>
+                    <dd class="col-8 pb-1">@Model.Name</dd>
+
+                    <dt class="col-4 pb-1">Course</dt>
+                    <dd class="col-8 pb-1">@Model.Course</dd>
+                    
+                    <dt class="col-4 pb-1">Age</dt>
+                    <dd class="col-8 pb-1">@Model.Age</dd>
+                    
+                    <dt class="col-4 pb-1">Email</dt>
+                    <dd class="col-8 pb-1">@Model.Email</dd>
+
+                    <dt class="col-4 pb-1">Classification</dt>
+                    <dd class="col-8 pb-1">@Model.Classification</dd>
+                </dl>
+            </div>
+
+            <!-- Navigation links -->
+            <div>               
+                <!-- add navigation link to Index action -->
+                <a asp-action="Index" class="btn btn-sm btn-primary">Students</a>
+    
+                <!-- add navigation link to Update action, passing the correct route id parameter --> 
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Edit</a>
+                
+                <!-- add navigation link to CreateTicket action, passing correct route parameter --> 
+                <a asp-action="TicketCreate" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Add Ticket</a> 
+ 
+                <!-- add navigation link to Delete action, passing the correct route id parameter --> 
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">Delete</a>        
+            </div>
+        </div>
+
+        <!-- Photo -->
+        <div class="col-4">
+            <img src="@Model.PhotoUrl" class="img-fluid">
+        </div>
+    </div>    
+</div>
+
+<!-- TBC Create and Add Tickets Partial View --> 
+<!-- wrap in a card to have consistent layout with card above containing the student details -->
+

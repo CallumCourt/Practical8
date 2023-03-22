@@ -1,0 +1,38 @@
+@model IList<Student>
+
+<div class="card border rounded shadow p-4">
+
+    <!-- Title bar -->
+    <div class="d-flex align-items-center justify-content-between">
+        <h3>Student List</h3>
+        <a class="btn btn-sm btn-primary" asp-action="create">Create</a>
+    </div>
+
+    <!-- List of students -->
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var s in Model)
+            {
+                <tr>
+                    <td>@s.Id</td>
+                    <td>@s.Name</td>
+                    <td>@s.Course</td>
+                    <td>@s.Age</td>
+                    <td>
+                        <a class="btn btn-link p-0 m-0" asp-action="Details" asp-route-id="@s.Id">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
