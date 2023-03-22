@@ -54,27 +54,10 @@
   <h3>Student Tickets</h3>
   <div class="card rounded shadow p-4">
     <partial name="_Tickets" />
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th>Ticket Issue</th>
-          <th>Created On</th>
-          <th>Active</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach(var t in Model.Tickets) {
-        <tr>
-          <td>@t.Issue</td>
-          <td>@t.CreatedOn</td>
-          <td>@t.Active</td>
-          <td>
-               <a asp-action="TicketDelete" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Delete</a> 
-          </td>
-        </tr>
-        }
-      </tbody>
+  
+    </partial>
+    
+</div>
 </div>
 <!-- wrap in a card to have consistent layout with card above containing the student details -->
 

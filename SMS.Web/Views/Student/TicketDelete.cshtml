@@ -25,15 +25,15 @@
     <div class="mt-4">
         <!-- TBC -->
         <!-- add a form with hidden input named Id storing the ticket id  -->
-      <form asp-action="TicketDelete">
+      <form asp-action="TicketDeleteConfirm">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
       <input type="hidden" asp-for="Id" class="form-control"/>
         <input type="hidden" asp-for="StudentId" class="form-control"/>
-      </form>
+      
         <!-- the form asp-action should call TicketDeleteConfirm          -->
         <!-- add a form input field with type of submit and value Confirm -->
         <!--   this submit field can be styled as a danger button         -->
-          <form asp-action="TicketDeleteConfirm">
+          
           <input type="hidden" asp-for="Id" class="form-control"/>
 
         <input type="submit" value="Delete" class="btn btn-danger"/>

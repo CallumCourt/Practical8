@@ -171,12 +171,14 @@ public class StudentController : Controller
     public IActionResult TicketDeleteConfirm(int id)
     {
         // TBC 
-        
+        var t = svc.GetTicket(id);
         // delete student via service
+      svc.DeleteTicket(id);
             
-        // Q4 replace with redirect to List of students       
+        // Q4 replace with redirect to List of students   
+      // return RedirectToAction(nameof(Index));
         // Q5 replace redirect to List of students with redirect to current student 
-        return NotFound();
+      return RedirectToAction(nameof(Details), new { Id = t.StudentId });
     }
 
 }
