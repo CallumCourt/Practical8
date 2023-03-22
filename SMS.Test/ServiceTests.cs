@@ -402,12 +402,13 @@ public class ServiceTests
     svc.CreateTicket(s.Id, "Testing Issue");
 
     //act
+    var nt = svc.GetStudent(s.Id);
     svc.DeleteTicket(s.Id);
-    var nt = svc.GetTicket(s.Id);
+    
 
     //assert
-    Assert.IsNull(nt);
-    Assert.Equal(0, nt.Tickets.Count); assertions
+    Assert.Null(nt);
+    Assert.Equal(0, nt.Tickets.Count);
     }
 
 }
