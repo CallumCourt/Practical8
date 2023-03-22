@@ -396,14 +396,18 @@ public class ServiceTests
     [Fact] 
     public void DeleteTicket_WhenValid_ShouldBeRemovedFromStudent()
     {
-        // TBC
-        // arrange
-        
+       //arrange
+    var s = svc.AddStudent(new Student{
+           Id = 8, Name = "John Bob", Course = "Physics", Email = "johnny@mail.com", Age = 81, Grade = 42});
+    svc.CreateTicket(s.Id, "Testing Issue");
 
-        // act
-        
-        // assert
-        Assert.True(false); // remove this assertion and replace with correct assertions
+    //act
+    svc.DeleteTicket(s.Id);
+    var nt = svc.GetTicket(s.Id);
+
+    //assert
+    Assert.IsNull(nt);
+    Assert.Equal(0, nt.Tickets.Count); assertions
     }
 
 }

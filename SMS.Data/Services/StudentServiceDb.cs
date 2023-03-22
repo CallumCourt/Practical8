@@ -172,11 +172,13 @@ public class StudentServiceDb : IStudentService
     {
         // TBC
         // find ticket
-        
-        
+      var t = GetTicket(id);
+      if ( t == null) { return false; }
+      
         // remove ticket 
-        
-        return true;
+      db.Tickets.Remove(t);
+      db.SaveChanges();
+      return true;
     }
 
     // Retrieve all tickets and the student associated with the ticket
